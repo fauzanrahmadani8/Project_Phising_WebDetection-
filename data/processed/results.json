@@ -1,0 +1,135 @@
+{
+  "n_rows": 11430,
+  "n_cols": 89,
+  "missing_total": 0,
+  "duplicates": 0,
+  "class_counts": {
+    "legitimate": 5715,
+    "phishing": 5715
+  },
+  "outlier_summary": {
+    "length_url": 620,
+    "length_hostname": 775,
+    "nb_hyperlinks": 953,
+    "web_traffic": 2138,
+    "domain_age": 0
+  },
+  "mean_length_url_phishing": 74.8719160104987,
+  "mean_length_url_legitimate": 47.38145231846019,
+  "label_mapping": {
+    "legitimate": 0,
+    "phishing": 1
+  },
+  "train_size": 9144,
+  "test_size": 2286,
+  "metrics": {
+    "Decision Tree (Baseline)": {
+      "accuracy": 0.9339457567804025,
+      "precision": 0.9290657439446367,
+      "recall": 0.9396325459317585,
+      "f1": 0.9343192692474989,
+      "auc": 0.9339457567804025
+    },
+    "Decision Tree (Tuned)": {
+      "accuracy": 0.931758530183727,
+      "precision": 0.9236051502145923,
+      "recall": 0.9413823272090989,
+      "f1": 0.9324090121317158,
+      "auc": 0.9524677197502545
+    },
+    "Random Forest (Baseline)": {
+      "accuracy": 0.9593175853018373,
+      "precision": 0.9549393414211439,
+      "recall": 0.9641294838145232,
+      "f1": 0.9595124074880279,
+      "auc": 0.9934708511392332
+    },
+    "Random Forest (Tuned)": {
+      "accuracy": 0.9619422572178478,
+      "precision": 0.9583333333333334,
+      "recall": 0.9658792650918635,
+      "f1": 0.9620915032679739,
+      "auc": 0.9933943077762699
+    }
+  },
+  "best_params_dt": {
+    "criterion": "entropy",
+    "max_depth": 10,
+    "min_samples_leaf": 2,
+    "min_samples_split": 2
+  },
+  "best_params_rf": {
+    "max_depth": 20,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "n_estimators": 300
+  },
+  "cv_best_score_dt": 0.9390863584864804,
+  "cv_best_score_rf": 0.9673008292127921,
+  "cv10_mean_rf": 0.9673665791776026,
+  "cv10_std_rf": 0.00449612079003661,
+  "classification_report_best_rf": "              precision    recall  f1-score   support\n\n  legitimate       0.97      0.96      0.96      1143\n    phishing       0.96      0.97      0.96      1143\n\n    accuracy                           0.96      2286\n   macro avg       0.96      0.96      0.96      2286\nweighted avg       0.96      0.96      0.96      2286\n",
+  "classification_report_best_dt": "              precision    recall  f1-score   support\n\n  legitimate       0.94      0.92      0.93      1143\n    phishing       0.92      0.94      0.93      1143\n\n    accuracy                           0.93      2286\n   macro avg       0.93      0.93      0.93      2286\nweighted avg       0.93      0.93      0.93      2286\n",
+  "confusion_matrix_rf": [
+    [
+      1095,
+      48
+    ],
+    [
+      39,
+      1104
+    ]
+  ],
+  "confusion_matrix_dt": [
+    [
+      1054,
+      89
+    ],
+    [
+      67,
+      1076
+    ]
+  ],
+  "top_features_rf": [
+    {
+      "Feature": "google_index",
+      "Importance": 0.17238501312353263
+    },
+    {
+      "Feature": "page_rank",
+      "Importance": 0.11027441752657313
+    },
+    {
+      "Feature": "nb_hyperlinks",
+      "Importance": 0.08058138013335285
+    },
+    {
+      "Feature": "web_traffic",
+      "Importance": 0.074534673353169
+    },
+    {
+      "Feature": "nb_www",
+      "Importance": 0.04141703024111366
+    },
+    {
+      "Feature": "ratio_extHyperlinks",
+      "Importance": 0.031541693359177427
+    },
+    {
+      "Feature": "domain_age",
+      "Importance": 0.03095544409410709
+    },
+    {
+      "Feature": "phish_hints",
+      "Importance": 0.028514741391704065
+    },
+    {
+      "Feature": "safe_anchor",
+      "Importance": 0.026247136171915014
+    },
+    {
+      "Feature": "longest_word_path",
+      "Importance": 0.026051692945836626
+    }
+  ]
+}
